@@ -1,23 +1,26 @@
-def word_count(text):
-    word_conjunction = text.split()
-    return len(word_conjunction)
+def get_num_words(text):
+    words = text.split()
+    return len(words)
 
-def count_characters(text):
-    characters = {}
+
+def get_chars_dict(text):
+    chars = {}
     for c in text:
-        word_lower = c.lower()
-        if word_lower in characters:
-            characters[word_lower] += 1
+        lowered = c.lower()
+        if lowered in chars:
+            chars[lowered] += 1
         else:
-            characters[word_lower] = 1
-    return characters
+            chars[lowered] = 1
+    return chars
 
-def sort_on(dict):
-    return dict["num"]
 
-def sorted_report(dict):
-    list = []
-    for key, value in dict:
-        temp = [key,value]
-        list.append(temp)
-    return list.sort(reverse=True, key=sort_on)
+def sort_on(d):
+    return d["num"]
+
+
+def chars_dict_to_sorted_list(num_chars_dict):
+    sorted_list = []
+    for ch in num_chars_dict:
+        sorted_list.append({"char": ch, "num": num_chars_dict[ch]})
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
