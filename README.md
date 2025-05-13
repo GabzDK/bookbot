@@ -1,3 +1,2 @@
 # bookbot
-
-BookBot is my first [Boot.dev](https://www.boot.dev) project!
+Analyze a book and get a report with how many characters are on it
